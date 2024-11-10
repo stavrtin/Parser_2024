@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    background-color: #003366; /* Темно-синий */
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.menu {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+    display: flex; /* Делаем меню горизонтальным */
+    justify-content: center; /* Центрируем меню */
+}
+
+.menu li {
+    margin: 0 15px; /* Отступы между пунктами меню */
+}
+
+.menu li a {
+    color: white; /* Цвет текста пунктов меню - белый */
+    text-decoration: underline; /* Убираем подчеркивание */
+    padding: 10px; /* Добавляем отступы для удобства */
+}
+
+.menu li a:hover {
+    color: #add8e6; /* Цвет текста при наведении - бледно-голубой */
+}
+
+.input-container {
+    margin: 20px;
+    display: flex; /* Используем flexbox для выравнивания */
+    align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+.output-container h4 {
+    margin: 5px 0; /* Отступ сверху и снизу для заголовка */
+}
+
+.output-container p {
+    margin: 2px 0; /* Минимальные отступы для параграфов */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Отступ сверху для таблицы */
+}
+
+th {
+    background-color: #add8e6; /* Бледно-голубой */
+    padding: 10px; /* Отступ внутри ячеек заголовка */
+    text-align: left; /* Выравнивание текста в заголовках */
+}
+
+td {
+    border: 1px solid #d3d3d3; /* Светло-серый */
+    padding: 8px; /* Отступ внутри ячеек */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Светло-серый фон для четных строк */
+}
+
+tbody tr:hover {
+    background-color: #e0e0e0; /* Цвет фона при наведении на строку */
+}

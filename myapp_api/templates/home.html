@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+{% load static %}  <!-- Загрузка тегов статических файлов -->
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'myapp_api/styles.css' %}">
+    <title>Главная страница</title>
+</head>
+<body>
+    <header>
+        <h2>Сбор и разметка данных</h2>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Урок 1 API</a></li>
+                <li><a href="#">Урок 2</a></li>
+                <li><a href="#">Урок 3</a></li>
+                <li><a href="#">Урок 4</a></li>
+                <li><a href="#">Урок 5</a></li>
+                <li><a href="#">Урок 6</a></li>
+                <li><a href="#">Урок 7</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="input-container">
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="city" placeholder="Город" required>
+            <input type="text" name="category" placeholder="Категория" required>
+            <input type="number" name="limit" placeholder="Число" required>
+            <button type="submit">Отправить</button>
+            <div class="output-container">
+                {% if data %}
+                    <h4>Введены параметры запроса:</h4>
+                    <p>Город: {{ data.city }}</p>
+                    <p>Категория: {{ data.category }}</p>
+                    <p>Число: {{ data.limit }}</p>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Адрес</th>
+                <th>Регион</th>
+                <th>Широта</th>
+                <th>Долгота</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+                <tr>
+                    <td>{{ result.name }}</td>
+                    <td>{{ result.address }}</td>
+                    <td>{{ result.region }}</td>
+                    <td>{{ result.latitude }}</td>
+                    <td>{{ result.longitude }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <footer>
+        <p>© 2024 Проект для курса "Парсеры"</p>
+    </footer>
+</body>
+
+</html>
