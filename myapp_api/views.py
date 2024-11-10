@@ -23,9 +23,14 @@ def home(request):
         "Authorization": api_key
     }
     data_vvoda = None
-    # city = ''
-    # category = ''
-    # limit = ''
+    city = ''
+    category = ''
+    limit = ''
+    # data_vvoda = {
+    #     'city': '',
+    #     'category': '',
+    #     'limit': '',
+    # }
 
     # Проверяем, был ли запрос методом POST
     if request.method == 'POST':
