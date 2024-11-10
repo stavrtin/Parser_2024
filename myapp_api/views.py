@@ -25,12 +25,8 @@ def home(request):
     data_vvoda = None
     city = ''
     category = ''
-    limit = ''
-    # data_vvoda = {
-    #     'city': '',
-    #     'category': '',
-    #     'limit': '',
-    # }
+    limit = 5
+
 
     # Проверяем, был ли запрос методом POST
     if request.method == 'POST':
